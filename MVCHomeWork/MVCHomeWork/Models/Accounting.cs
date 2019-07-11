@@ -7,7 +7,6 @@ namespace MVCHomeWork.Models
 {
     public class Accounting
     {
-        public int No { get; set; }
         public int TypeOfMoney { get; set; }
         public DateTime Date { get; set; }
         public decimal Money { get; set; }

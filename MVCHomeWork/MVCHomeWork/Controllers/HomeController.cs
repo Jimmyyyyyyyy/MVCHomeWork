@@ -24,7 +24,7 @@ namespace MVCHomeWork.Controllers
             {
                 int num = rnd.Next(365);
 
-                Accounting tmp = new Accounting() { No = i, TypeOfMoney = rnd.Next(1, 3), Date = dateTimeMin.AddDays(num), Money = rnd.Next() };
+                Accounting tmp = new Accounting() { TypeOfMoney = rnd.Next(1, 3), Date = dateTimeMin.AddDays(num), Money = rnd.Next() };
                 data.Add(tmp);
             }
 

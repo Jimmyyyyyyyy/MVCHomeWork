@@ -18,26 +18,30 @@
                 <th>金額</th>
             </tr>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.No</td>
-                    <td>
-                        @{
-                            if (item.TypeOfMoney == 1)
-                            {
-                                <span>支出</span>
+            @{
+                int i = 0;
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(++i)</td>
+                        <td>
+                            @{
+                                if (item.TypeOfMoney == 1)
+                                {
+                                    <span>支出</span>
+                                }
+                                else
+                                {
+                                    <span>收入</span>
+                                }
                             }
-                            else
-                            {
-                                <span>收入</span>
-                            }
-                        }
 
-                    </td>
-                    <td>@item.Date.ToString("yyy-MM-dd")</td>
-                    <td>@item.Money.ToString("N0")</td>
-                </tr>
+                        </td>
+                        <td>@item.Date.ToString("yyy-MM-dd")</td>
+                        <td>@item.Money.ToString("N0")</td>
+                    </tr>
+                }
+
             }
         </table>
     </div>
