@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCHomeWork.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,24 @@ namespace MVCHomeWork.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult DataGridAction()
+        {
+            Random rnd = new Random();
+            DateTime dateTimeMin = Convert.ToDateTime("2019-1-1");
+            List<Accounting> data = new List<Accounting>();
+            for (int i = 1; i <= 100; i++)
+            {
+                int num = rnd.Next(365);
+
+                Accounting tmp = new Accounting() { No = i, TypeOfMoney = rnd.Next(1, 3), Date = dateTimeMin.AddDays(num), Money = rnd.Next() };
+                data.Add(tmp);
+            }
+
+            var result = data;
+            return View(result);
         }
 
         public ActionResult About()

@@ -1,0 +1,44 @@
+﻿@*@model List<EmployeeViewModel>*@
+@model List<MVCHomeWork.Models.Accounting>
+
+@{
+    ViewBag.Title = "DataGridAction";
+    Layout = null;
+}
+
+@*<h2>DataGridAction</h2>*@
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>#</th>
+                <th>類別</th>
+                <th>日期</th>
+                <th>金額</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.No</td>
+                    <td>
+                        @{
+                            if (item.TypeOfMoney == 1)
+                            {
+                                <span>支出</span>
+                            }
+                            else
+                            {
+                                <span>收入</span>
+                            }
+                        }
+
+                    </td>
+                    <td>@item.Date.ToString("yyy-MM-dd")</td>
+                    <td>@item.Money.ToString("N0")</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
