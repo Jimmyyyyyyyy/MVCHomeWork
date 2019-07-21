@@ -9,6 +9,7 @@ namespace MVCHomeWork.Controllers
 {
     public class HomeController : Controller
     {
+        private SkillTreeHomeworkEntities db = new SkillTreeHomeworkEntities();
         public ActionResult Index()
         {
             return View();
@@ -17,18 +18,19 @@ namespace MVCHomeWork.Controllers
         [ChildActionOnly]
         public ActionResult DataGridAction()
         {
-            Random rnd = new Random();
-            DateTime dateTimeMin = Convert.ToDateTime("2019-1-1");
-            List<Accounting> data = new List<Accounting>();
-            for (int i = 1; i <= 100; i++)
+            var data = db.AccountBook.ToList();
+            List<Accounting> result = new List<Accounting>();
+            foreach (var item in data)
             {
-                int num = rnd.Next(365);
-
-                Accounting tmp = new Accounting() { TypeOfMoney = rnd.Next(1, 3), Date = dateTimeMin.AddDays(num), Money = rnd.Next() };
-                data.Add(tmp);
+                result.Add(new Accounting() {
+                    Date = item.Dateee,
+                    Money = item.Amounttt,
+                    TypeOfMoney = item.Categoryyy
+                });
             }
 
-            var result = data;
+            result = result.OrderByDescending(x => x.Date).ToList();
+            
             return View(result);
         }
 
