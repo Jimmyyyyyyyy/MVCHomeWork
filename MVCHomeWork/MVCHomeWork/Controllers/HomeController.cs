@@ -1,4 +1,5 @@
 ﻿using MVCHomeWork.Models;
+using MVCHomeWork.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,13 @@ namespace MVCHomeWork.Controllers
 {
     public class HomeController : Controller
     {
-        private SkillTreeHomeworkEntities db = new SkillTreeHomeworkEntities();
+        private readonly AccountingService _accountingService;
+
+        public HomeController()
+        {
+            _accountingService = new AccountingService();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -18,7 +25,7 @@ namespace MVCHomeWork.Controllers
         [ChildActionOnly]
         public ActionResult DataGridAction()
         {
-            var data = db.AccountBook.ToList();
+            var data = _accountingService.Lookup();
             List<Accounting> result = new List<Accounting>();
             foreach (var item in data)
             {
