@@ -81,3 +81,8 @@ C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\obj\Debug\MVCHomeWork.csproj
 C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\obj\Debug\MVCHomeWork.csproj.CopyComplete
 C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\obj\Debug\MVCHomeWork.dll
 C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\obj\Debug\MVCHomeWork.pdb
+C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\bin\EntityFramework.dll
+C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\bin\EntityFramework.SqlServer.dll
+C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\bin\EntityFramework.xml
+C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\bin\EntityFramework.SqlServer.xml
+C:\MVC\HomeWork\MVCHomeWork\MVCHomeWork\MVCHomeWork\bin\zh-Hant\EntityFramework.resources.dll
