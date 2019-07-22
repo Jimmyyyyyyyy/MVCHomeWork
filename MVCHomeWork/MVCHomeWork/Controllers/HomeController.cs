@@ -34,7 +34,8 @@ namespace MVCHomeWork.Controllers
         {
             var data = _accountingService.Lookup().ToList();
             data = data.OrderByDescending(x => x.Date).ToList();
-            
+            _logService.Add(DateTime.Now, "取得內容");
+            _unitOfWork.Commit();
             return View(data);
         }
 
