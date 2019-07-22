@@ -10,7 +10,16 @@
     <Property Name="Dateee" Type="datetime" Nullable="false" />
     <Property Name="Remarkkk" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogDate" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="SkillTreeHomeworkModelStoreContainer">
     <EntitySet Name="AccountBook" EntityType="Self.AccountBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -151,8 +151,17 @@
       <DependentUpon>AccountBook.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Accounting.cs" />
+    <Compile Include="Models\Log.cs">
+      <DependentUpon>AccountBook.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Service\AccountingService.cs" />
+    <Compile Include="Service\LogService.cs" />
+    <Compile Include="Service\SkillTreeHomeworkEntities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SkillTreeHomework.mdf" />
@@ -169,8 +178,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\AccountBook.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AccountBook.Context.cs</LastGenOutput>
       <DependentUpon>AccountBook.edmx</DependentUpon>
+      <LastGenOutput>AccountBook.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\AccountBook.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
